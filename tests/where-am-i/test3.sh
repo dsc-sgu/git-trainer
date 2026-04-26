@@ -1,7 +1,7 @@
 #!/bin/bash
-cd /home/student/where-am-i
+cd "$HOME/where-am-i" || exit 1
 
-if git reflog | grep -qi "checkout: moving from"; then
+if git reflog | grep -qiE "checkout: moving from .* to [0-9a-f]{7,}"; then
     echo "3. Ага! Кто-то использовал git checkout! Это запрещено в данном задании. Вам нужно было использовать другую команду. Начните задание заново (клавиша 'r')."
     exit 1
 else

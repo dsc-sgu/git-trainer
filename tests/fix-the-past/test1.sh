@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/student/fix-the-past
+cd "$HOME/fix-the-past" || exit 1
 
 CURRENT_BRANCH=$(git branch --show-current)
 

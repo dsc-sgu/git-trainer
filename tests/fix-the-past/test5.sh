@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/student/fix-the-past
+cd "$HOME/fix-the-past" || exit 1
 
 rm -f app
 

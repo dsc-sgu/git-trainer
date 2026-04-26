@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/student/where-am-i
+cd "$HOME/where-am-i" || exit 1
 
 rm -f sim
 

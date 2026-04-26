@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/student/fix-the-past || exit 1
+cd "$HOME/fix-the-past" || exit 1
 
 if [ ! -f main.cpp ]; then
   echo "4. Ошибка: Файл main.cpp вообще не найден! Вы его случайно не удалили?"

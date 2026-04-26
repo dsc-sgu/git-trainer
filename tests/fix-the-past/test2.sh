@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/student/fix-the-past || exit 1
+cd "$HOME/fix-the-past" || exit 1
 
 
 TARGET_COMMIT_MSG="feat(main): implement rectangle area calculation"
