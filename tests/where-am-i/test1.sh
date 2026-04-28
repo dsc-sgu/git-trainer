@@ -2,21 +2,23 @@
 
 cd "$HOME/where-am-i" || exit 1
 
-rm -f sim
-g++ src/main.cpp src/physics.cpp -o sim 2>/dev/null
+rm -rf build
+mkdir build && cd build
+cmake .. > /dev/null 2>&1
+make > /dev/null 2>&1
+
 
 if [ $? -ne 0 ]; then
     echo "1. Ошибка компиляции! Вы точно вернули константу и правильно её назвали?"
     exit 1
 fi
 
-
-
-OUTPUT=$(./sim)
-if echo "$OUTPUT" | grep -q "0.0066743"; then
-    echo "1. Компиляция успешна! Чиселки сходятся."
+cd ..
+OUTPUT=$(./build/orbital_app)
+if echo "$OUTPUT" | grep -q "7672"; then
+    echo "1. Сборка успешна! Орбитальная скорость рассчитана верно."
     exit 0
 else
-    echo "1. Код компилируется, но расчеты неверны. Убедитесь точное ли значение нужной константы вы нашли?"
+    echo "1. Код компилируется, но расчеты неверны. Точное ли значение нужной константы вы нашли?"
     exit 1
 fi
