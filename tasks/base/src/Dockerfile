@@ -7,7 +7,7 @@ COPY tui ./tui/
 COPY cli ./cli/
 RUN cargo build --release -p cli
 
-FROM ubuntu:latest
+FROM ubuntu:24.04
 RUN yes | unminimize
 
 ARG USERNAME=student
