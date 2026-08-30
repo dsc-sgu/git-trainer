@@ -23,3 +23,6 @@ target
 db.sqlite
 
 .DS_Store
+
+.idea
+crash.log
