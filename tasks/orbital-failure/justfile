@@ -1,0 +1,3 @@
+default:
+    -git clone https://github.com/git-trainer-tasks/orbital-failure.git tasks/orbital-failure/src/repo
+    docker build -f tasks/orbital-failure/src/Dockerfile -t git-trainer:orbital-failure .
